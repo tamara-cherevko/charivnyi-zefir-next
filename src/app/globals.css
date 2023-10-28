@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.rootContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  border: 2px solid #333;
+  padding: 10px;
+  border-radius: 8px;
+}

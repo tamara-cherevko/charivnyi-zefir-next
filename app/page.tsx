@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>CHARIVNYI ZEFIR 45</h1>
+        
       </main>
     </div>
   );

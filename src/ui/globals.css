@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Museo Sans 100';
+  src: url('../public/fonts/MuseoSans_100-webfont.eot');
+  src:
+    url('../public/fonts/MuseoSans_100-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_100-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/MuseoSans_100-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_100-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_100-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Museo Sans 300';
+  src: url('../public/fonts/MuseoSans_300.otf');
+  src:
+    url('../public/fonts/MuseoSans_300-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_300-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_300-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_300-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Museo Sans 300 italic';
+  src:
+    url('../public/fonts/MuseoSans_300_Italic-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_300_Italic-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/MuseoSans_300_Italic-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_300_Italic-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_300_Italic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Museo Sans 500';
+  src: url('../public/fonts/MuseoSans_500.otf');
+  src:
+    url('../public/fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_500-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/MuseoSans_500-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_500-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_500-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Museo Sans 500 italic';
+  src:
+    url('../public/fonts/MuseoSans_500_Italic-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_500_Italic-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/MuseoSans_500_Italic-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_500_Italic-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_500_Italic-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Museo Sans 700';
+  src: url('../public/fonts/MuseoSans_700.otf');
+  src:
+    url('../public/fonts/MuseoSans_700-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_700-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/MuseoSans_700-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_700-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_700-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Museo Sans 900';
+  src: url('../public/fonts/MuseoSans_900.otf');
+  src:
+    url('../public/fonts/MuseoSans_900-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */ url('../public/fonts/MuseoSans_900-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */ url('../public/fonts/MuseoSans_900-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */ url('../public/fonts/MuseoSans_900-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */ url('../public/fonts/MuseoSans_900-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Oswald Bold';
+  src: url('../public/fonts/Oswald-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Amatic';
+  src: url('../public/fonts/AmaticSC-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Amatic Bold';
+  src: url('../public/fonts/AmaticSC-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  src: url('../public/fonts/Alegreya-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Palatino Linotype';
+  src: url('../public/fonts/pala.ttf');
+}
+
+@font-face {
+  font-family: 'Din';
+  src: url('../public/fonts/DINNextCYR-Light.otf');
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('../public/fonts/FuturaLightC.ttf');
+}
+
+@font-face {
+  font-family: 'Futura Bold';
+  src: url('../public/fonts/Futura Heavy font.ttf');
+}
+
+@layer base {
+  html {
+    font-family: 'Futura', system-ui, sans-serif;
+  }
+
+  h1 {
+    font-family: var(--font-amatic);
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-family: var(--font-amatic);
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 2px;
+    font-size: 2.4rem;
+    text-align: center;
+  }
+
+  h3 {
+    color: rgb(var(--color-grey));
+    font-family: var(--font-din);
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin: 1rem 0;
+  }
+
+  h4 {
+    font-family: var(--font-din);
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    font-size: 1.3rem;
+  }
+
+  h6 {
+    font-family: var(--font-din);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 1rem;
+    color: rgb(var(--color-grey-light-dark));
+    line-height: 2.4rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .internat-container {
+    @apply container mx-auto px-6;
+  }
+}

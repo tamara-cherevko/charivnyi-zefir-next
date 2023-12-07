@@ -14,6 +14,6 @@ export const businessConfigs = {
   mfo: '3218222005',
   inn: '26001052268517',
   bankName: `ХАРКIВСЬКЕ ГРУ АТ КБ "ПРИВАТБАНК"`,
-  bankMfo: '351533'
-
+  bankMfo: '351533',
+  freeShipping: '1500грн'
 }

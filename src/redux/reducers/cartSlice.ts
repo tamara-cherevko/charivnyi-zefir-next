@@ -1,4 +1,5 @@
 import { ICart } from '@/interfaces/cart/interface'
+import { IProduct, IProductId } from '@/interfaces/product/interface'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 const initialState: ICart = {

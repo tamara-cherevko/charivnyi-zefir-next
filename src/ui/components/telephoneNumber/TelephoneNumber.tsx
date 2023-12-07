@@ -8,7 +8,7 @@ const TelephoneNumber = () => {
       href={`tel:${phone}`}
       data-content={phone}
       data-type="phone"
-      className="text-purple no-underline text-sm font-normal font-verdana hover:text-black"
+      className="text-purple no-underline text-md font-normal font-verdana hover:text-black"
     >
       {phone}
     </a>

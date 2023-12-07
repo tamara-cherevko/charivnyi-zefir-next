@@ -1,7 +1,7 @@
 import { businessConfigs } from '@/lib/businessConfigs'
-import TelephoneNumber from '@/ui/telephoneNumber/TelephoneNumber'
-import shippingImage from '@/public/images/shipping.jpg'
+import TelephoneNumber from '@/ui/components/telephoneNumber/TelephoneNumber'
 import { SecondaryPageLayout } from '@/ui/layouts'
+import { Metadata } from 'next'
 
 const shippingInfo = [
   {
@@ -23,7 +23,7 @@ const shippingInfo = [
           відповідного оператора.
         </p>
         <p>
-          <strong> При умові замовленні від 1500грн ви не сплачуєте вартість доставки.</strong>
+          <strong>При умові замовленні від ${businessConfigs.freeShipping} ви не сплачуєте вартість доставки</strong>
         </p>
         <p>Ми гарануємо безпечне та безкоштовне пакування.</p>
       </>
@@ -43,9 +43,14 @@ const shippingInfo = [
   },
 ]
 
+export const metadata: Metadata = {
+  title: 'Чарівний зефір - Умови доставки',
+  description: `Чарівний зефір - безкоштовна доставка від ${businessConfigs.freeShipping}`,
+}
+
 export default function Shipping() {
   return (
-    <SecondaryPageLayout title="Умови доставки" image={shippingImage}>
+    <SecondaryPageLayout title="Умови доставки" image={'/images/shipping.jpg'}>
       <div className="grid grid-cols-4 gap-6 gap-y-10 w-[70%] mx-auto">
         {shippingInfo.map(({ name, description }, i) => (
           <>

@@ -1,7 +1,7 @@
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 interface IProps {
-  image: StaticImageData
+  image: string
   alt: string
 }
 

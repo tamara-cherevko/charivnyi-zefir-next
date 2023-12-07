@@ -1,20 +1,14 @@
-import React from 'react'
-import waveTop from '@/public/images/wave-top.png'
-import waveMiddle from '@/public/images/wave-mid.png'
-import waveBottom from '@/public/images/wave-bot.png'
-import { StaticImageData } from 'next/image'
-
 const Wave = () => (
   <div className="absolute top-0 left-0 w-[200%] h-full z-10 ">
     <div className="absolute top-0 left-0 right-0 bottom-0 m-auto">
-      <WaveItem position="top" backgroundImage={waveTop} />
-      <WaveItem position="middle" backgroundImage={waveMiddle} />
-      <WaveItem position="bottom" backgroundImage={waveBottom} />
+      <WaveItem position="top" backgroundImage={'/images/wave-top.png'} />
+      <WaveItem position="middle" backgroundImage={'/images/wave-mid.png'} />
+      <WaveItem position="bottom" backgroundImage={'/images/wave-bot.png'} />
     </div>
   </div>
 )
 
-const WaveItem = ({ position, backgroundImage }: { position: string; backgroundImage: StaticImageData }) => {
+const WaveItem = ({ position, backgroundImage }: { position: string; backgroundImage: string }) => {
   const waveProperties = {
     top: {
       zIndex: 15,
@@ -37,7 +31,7 @@ const WaveItem = ({ position, backgroundImage }: { position: string; backgroundI
     },
   }
 
-  const props = waveProperties[position]
+  const props = (waveProperties as any)[position]
 
   return (
     <div
@@ -51,7 +45,7 @@ const WaveItem = ({ position, backgroundImage }: { position: string; backgroundI
         className="absolute top-0 left-0 w-[200%] h-full bg-repeat-x bg-top"
         style={{
           transformOrigin: 'center top',
-          backgroundImage: `url(${backgroundImage.src})`,
+          backgroundImage: `url(${backgroundImage})`,
           backgroundSize: props.backgroundSize,
           animation: `waveAnimation ${props.animationDuration} infinite alternate`,
           animationDelay: props.animationDelay || '0',

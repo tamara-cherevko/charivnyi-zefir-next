@@ -1,9 +1,13 @@
+'use client'
+
 import { configureStore } from '@reduxjs/toolkit'
 import cartReducer from '@/redux/reducers/cartSlice'
 import { TypedUseSelectorHook, useSelector } from 'react-redux'
 
 export const store = configureStore({
-  reducer: { cartReducer },
+  reducer: {
+    cartReducer,
+  },
 })
 
 export type RootState = ReturnType<typeof store.getState>

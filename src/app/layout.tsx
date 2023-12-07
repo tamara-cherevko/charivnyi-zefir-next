@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 
 import '@/ui/globals.css'
-import Head from 'next/head'
 import Header from '@/ui/header/Header'
-import Menu from '@/ui/menu/Menu'
+import Menu from '@/ui/components/menu/Menu'
 import { ReduxProvider } from '@/redux/provider'
 import Footer from '@/ui/footer/Footer'
 
@@ -15,13 +14,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <Head>
-        <title>Чарівний зефір - healthy sweets, натуральні солодощі та морозиво</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <body className="text-base">
-        <ReduxProvider>
+    <ReduxProvider>
+      <html lang="en">
+        <body className="text-base text-grey-text">
           <div className="h-screen min-h-screen">
             <Header />
             <div className="flex flex-col justify-between h-[calc(100%-60px)]">
@@ -32,8 +27,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Footer />
             </div>
           </div>
-        </ReduxProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ReduxProvider>
   )
 }

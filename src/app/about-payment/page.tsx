@@ -1,8 +1,6 @@
 import { businessConfigs } from '@/lib/businessConfigs'
-import { H2, SetcionImage } from '@/ui'
-import Head from 'next/head'
-import shippingImage from '@/public/images/shipping.jpg'
 import { SecondaryPageLayout } from '@/ui/layouts'
+import { Fragment } from 'react'
 
 const PaymentInfo = [
   {
@@ -49,10 +47,10 @@ const PaymentInfo = [
 
 export default function AboutPayment() {
   return (
-    <SecondaryPageLayout title="Оплата" image={shippingImage}>
+    <SecondaryPageLayout title="Оплата" image={'/images/shipping.jpg'}>
       <div className="grid grid-cols-4 gap-6 gap-y-10 w-[70%] mx-auto">
         {PaymentInfo.map(({ name, description }, i) => (
-          <>
+          <Fragment key={i}>
             <div>
               <p className="bg-white bg-opacity-50 rounded float-right text-center font-bold text-purple p-2 w-full text-lg">
                 {name}
@@ -60,7 +58,7 @@ export default function AboutPayment() {
             </div>
             <div className="col-span-3">{description}</div>
             {i !== PaymentInfo.length - 1 ? <hr className="col-span-4" /> : ''}
-          </>
+          </Fragment>
         ))}
       </div>
     </SecondaryPageLayout>

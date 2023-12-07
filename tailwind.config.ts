@@ -44,15 +44,22 @@ const config: Config = {
           light: 'rgba(243, 243, 245, 1)',
           middle: 'rgba(160, 160, 159, 1)', //greyLightDark
           dark: 'rgb(25, 25, 25)',
+          text: 'rgb(60, 60, 60)',
         },
 
         black: {
-          DEFAULT: 'rgba(0, 0, 0, 1)',
+          DEFAULT: 'rgba(25, 25, 25, 1)',
           100: 'rgba(0, 0, 0, 0.1)',
           200: 'rgba(0, 0, 0, 0.2)',
           light: 'rgba(23, 23, 23, 0.6)',
           lighter: 'rgba(25, 25, 25, 0.3)', //blackLight03
           greyish: 'rgba(25, 25, 25, 0.2)', //blackSuperLight
+        },
+        blue: {
+          DEFAULT: 'rgba(74, 91, 197, 1)',
+          300: 'rgba(74, 91, 197, 0.3)',
+          200: 'rgba(74, 91, 197, 0.2)',
+          100: 'rgba(74, 91, 197, 0.1)',
         },
       },
       boxShadow: {
@@ -63,11 +70,15 @@ const config: Config = {
         verdana: ['"Verdana"'],
         palatino: 'Palatino Linotype',
         amatic: 'Amatic',
+        fixel: 'Fixel Regular',
+        headings: 'Fixel SemiBold',
+        selection: 'Fixel Medium',
+        din: 'din',
       },
     },
   },
   plugins: [
-    function ({ addUtilities }) {
+    function ({ addUtilities }: any) {
       const newUtilities = {
         '@keyframes waveAnimation': {
           '0%': {

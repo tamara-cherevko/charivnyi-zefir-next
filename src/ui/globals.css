@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 @import '~react-image-gallery/styles/css/image-gallery.css';
+@import '~react-toastify/dist/ReactToastify.css';
+
+:root {
+  --toastify-color-success: rgba(203, 230, 229);
+  --toastify-text-color-success: rgb(25, 25, 25);
+}
 
 @font-face {
   font-family: 'Fixel Regular';
@@ -181,4 +187,13 @@
   .internat-container {
     @apply container mx-auto px-6;
   }
+}
+
+.image-gallery-thumbnail {
+  border: 2px solid transparent;
+}
+
+.image-gallery-thumbnail:hover,
+.image-gallery-thumbnail.active {
+  border: 2px solid rgba(74, 91, 197, 1);
 }

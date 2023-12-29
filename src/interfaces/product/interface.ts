@@ -1,5 +1,5 @@
 export type IProductId = number
-export type IProductPrice = string
+export type IProductPrice = number
 
 export interface IProductImage {
   image: string
@@ -23,7 +23,7 @@ export interface IProduct {
   short_description: string
   description: string
   slug: string
-  price: string
+  price: number
   weight: string
   image: string
   position: number

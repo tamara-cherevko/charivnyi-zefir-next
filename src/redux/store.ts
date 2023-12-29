@@ -8,6 +8,8 @@ export const store = configureStore({
   reducer: {
     cartReducer,
   },
+
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
 
 export type RootState = ReturnType<typeof store.getState>

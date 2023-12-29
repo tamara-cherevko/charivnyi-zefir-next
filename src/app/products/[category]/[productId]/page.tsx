@@ -1,7 +1,6 @@
 import { IProduct } from '@/interfaces/product/interface'
 import { Price } from '@/ui'
-import { ProductNew, ProductGallery, Breadcrumbs } from '@/ui/components'
-import Button from '@/ui/components/button/Button'
+import { ProductNew, ProductGallery, Breadcrumbs, BuyButton } from '@/ui/components'
 import ProductDefaultImage from '@/ui/components/product/ProductDefaultImage'
 import { H3 } from '@/ui/text'
 import { ReactNode } from 'react'
@@ -18,6 +17,7 @@ const fetchProductDetails = async (productId: string): Promise<IProduct> => {
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }
+
   return res.json()
 }
 
@@ -47,10 +47,10 @@ export default async function ProductDetails({ params }: IParams) {
       {children}
     </div>
   )
-
   return (
-    <main>
+    <>
       <Breadcrumbs />
+
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-5">
           {images?.length ? <ProductGallery images={images} /> : <ProductDefaultImage alt={title} />}
@@ -60,20 +60,22 @@ export default async function ProductDetails({ params }: IParams) {
           <div className="my-4 flex">
             <Price value={price} />
           </div>
-          <div className="my-4 flex">
-            <Button>В кошик</Button>
+          <div className="my-4">
+            <BuyButton product={product} />
           </div>
           <div className="my-4">
             <ProductNew product={product} />
           </div>
           <InfoContent title="Артікул">{id}</InfoContent>
-          {!!descriptionLines?.length && (
-            <InfoContent>
-              {descriptionLines.map((line, i) => (
-                <p key={`description_line_${i}`}>{line}</p>
-              ))}
-            </InfoContent>
-          )}
+          <div className="mb-4">
+            {!!descriptionLines?.length && (
+              <InfoContent>
+                {descriptionLines.map((line, i) => (
+                  <p key={`description_line_${i}`}>{line}</p>
+                ))}
+              </InfoContent>
+            )}
+          </div>
           {!!delivery_option_title && <InfoContent title="Доставимо">{delivery_option_title}</InfoContent>}
           {!!netto && <InfoContent title="Вага, г">{netto}</InfoContent>}
           {!!shelf_life && <InfoContent title="Термін зберігання">{shelf_life}</InfoContent>}
@@ -93,6 +95,6 @@ export default async function ProductDetails({ params }: IParams) {
           {!!caloric_value && <InfoContent title="Калорійність, кКал / 100г">{caloric_value}</InfoContent>}
         </div>
       </div>
-    </main>
+    </>
   )
 }

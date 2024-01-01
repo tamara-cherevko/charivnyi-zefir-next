@@ -1,13 +1,16 @@
-import { IProduct } from '@/interfaces/product/interface'
+import { IProduct, IProductInGroup } from '@/interfaces/product/interface'
 import { Price } from '@/ui'
+import Image from 'next/image'
 import { ProductNew, ProductGallery, Breadcrumbs, BuyButton } from '@/ui/components'
 import ProductDefaultImage from '@/ui/components/product/ProductDefaultImage'
 import { H3 } from '@/ui/text'
 import { ReactNode } from 'react'
+import Link from 'next/link'
 
 interface IParams {
   params: {
     productId: string
+    category: string
   }
 }
 
@@ -21,9 +24,23 @@ const fetchProductDetails = async (productId: string): Promise<IProduct> => {
   return res.json()
 }
 
+const fetchProductGroups = async (productId: string): Promise<IProductInGroup[]> => {
+  const res = await fetch(`http://localhost:3000/api/product-groups?id=${productId}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
+
 export default async function ProductDetails({ params }: IParams) {
-  const { productId } = params
+  const { productId, category } = params
   const product = await fetchProductDetails(productId)
+  const productsInGroup = await fetchProductGroups(productId)
+  const currentModifierId =
+    productsInGroup.find((modifier) => modifier.product_id === Number(productId))?.modifier_id || null
+  console.log(productsInGroup.find((modifier) => modifier.product_id === Number(productId)))
   const {
     images,
     title,
@@ -63,6 +80,28 @@ export default async function ProductDetails({ params }: IParams) {
           <div className="my-4">
             <BuyButton product={product} />
           </div>
+          {productsInGroup?.length && (
+            <div className="flex gap-6 my-8">
+              {productsInGroup.map((modifier) => (
+                <Link
+                  key={modifier.modifier_id}
+                  href={`/products/${category}/${modifier.product_id}`}
+                  className={`flex flex-col items-center justify-center  border-4 border-transparent hover:border-blue rounded-xl w-[80px] ${
+                    currentModifierId === modifier.modifier_id ? 'bg-blue text-white' : 'bg-blue-300'
+                  }`}
+                >
+                  <Image
+                    src={`/images/modifiers/${modifier.image}`}
+                    alt={modifier.title}
+                    width="60"
+                    height="60"
+                    className="rounded-full px-2 pt-1"
+                  />
+                  <div className="text-sm mx-2 -mt-1 mb-1">{modifier.title}</div>
+                </Link>
+              ))}
+            </div>
+          )}
           <div className="my-4">
             <ProductNew product={product} />
           </div>

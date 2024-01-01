@@ -78,6 +78,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require('daisyui'),
     function ({ addUtilities }: any) {
       const newUtilities = {
         '@keyframes waveAnimation': {

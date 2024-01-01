@@ -40,3 +40,11 @@ export interface IProduct {
   carbohydrates: number
   caloric_value: number
 }
+
+export interface IProductInGroup {
+  modifier_id: string
+  title: string
+  image: string
+  description: string
+  product_id: IProductId
+}

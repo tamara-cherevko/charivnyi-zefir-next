@@ -9,7 +9,7 @@ import H4 from '../text/H4'
 
 const FooterMenuItem = ({ title, link }: IMenuItem) => {
   return (
-    <Link className="font-fixel block text-[16px] mb-2  text-gray-700 hover:text-pink" href={link}>
+    <Link className="font-fixel block text-[16px] mb-2  text-gray-700 hover:text-pink" href={`/${link}`}>
       {title}
     </Link>
   )

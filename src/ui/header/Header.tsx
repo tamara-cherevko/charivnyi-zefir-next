@@ -17,7 +17,7 @@ const Header = () => {
               <div>{businessConfigs.city}</div>
               <div>{businessConfigs.address}</div>
             </div>
-            <div className="hidden md:block pl-4 border-l border-grey-dark">
+            <div className="hidden md:block pl-4 border-l border-grey-dark break-keep ">
               <TelephoneNumber />
             </div>
           </div>

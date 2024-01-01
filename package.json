@@ -13,6 +13,7 @@
     "@types/react-youtube": "^7.10.0",
     "classnames": "^2.3.2",
     "clsx": "^2.0.0",
+    "daisyui": "^4.4.24",
     "next": "14.0.0",
     "next-redux-wrapper": "^8.1.0",
     "react": "^18",

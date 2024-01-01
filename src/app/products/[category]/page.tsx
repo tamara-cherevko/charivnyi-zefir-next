@@ -56,7 +56,7 @@ export default async function Products({ params }: IParams) {
   const filteredCategories = categories.filter((cat) => categoriesForThepage[category]?.includes(cat.id))
 
   return (
-    <main>
+    <>
       {filteredCategories.map(({ id, title }) => (
         <div key={`category_${id}`}>
           <H2 className="my-8">/ {title}</H2>
@@ -95,6 +95,6 @@ export default async function Products({ params }: IParams) {
           </div>
         </div>
       ))}
-    </main>
+    </>
   )
 }
